@@ -1,29 +1,26 @@
-Pharma Regulatory Chatbot
-This project is a secure and intelligent chatbot designed to help pharmaceutical professionals quickly access and understand regulatory documents such as Standard Operating Procedures (SOPs), cGMP guidelines, and FDA regulations. Built using LangChain, Hugging Face embeddings, FAISS, and the Mistral-7B model hosted via Together API, the system enables real-time question-answering directly from uploaded PDF files.
+An intelligent, secure chatbot designed for pharmaceutical professionals to instantly query SOPs, cGMP policies, and FDA regulations — directly from uploaded documents.
+
+Built using LangChain, Mixtral-8x7B-Instruct-v0.1 via Together API, FAISS, BM25Retriever, and Streamlit, this chatbot transforms regulatory document search into a natural, interactive conversation.
 
 Key Features:
+Natural Language Questioning: Ask regulatory questions as you would to a colleague — no keywords or syntax needed.
 
-Ask questions about SOPs, cGMP, or FDA norms in natural language
+Multi-Document Upload: Seamlessly upload and parse multiple PDF or DOCX files with intelligent chunking.
 
-Supports multi-PDF upload with automatic parsing and cleanup
+Strict Contextual Answers: Uses RAG + prompt engineering to avoid hallucinations. Returns “Not found in context” when unsupported.
 
-Uses vector-based semantic search (FAISS) for high-relevance document retrieval
+Hybrid Retrieval: Combines FAISS (semantic) and BM25 (keyword) search for highly relevant results.
 
-Answers strictly based on document context using a custom prompt (RAG approach)
+Conversational Memory: Supports multi-turn conversations with ConversationBufferMemory and ConversationalRetrievalChain.
 
-Organization-wide password-protected access (no user database needed)
+Security-First Design: Single-password protected access with .env integration. Ideal for VPN/firewalled environments — no user database required.
 
-Stylish and functional UI built with Streamlit (includes auto-scroll, chat export, and dark theme)
+Modern Streamlit UI:
 
-Designed for QA/QC teams, regulatory departments, and pharma auditors
+Auto-scroll to latest message
 
-Use Cases:
+Chat bubbles (bot vs user)
 
-Internal SOP query resolution
+Sidebar with “New Chat” and “Export Chat”
 
-Regulatory compliance audits
-
-Onboarding or training of pharma staff
-
-Rapid document review for QA/QC teams
-
+Fallback general query option if no PDF is uploaded
